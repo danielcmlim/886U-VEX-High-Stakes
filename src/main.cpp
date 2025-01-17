@@ -7,7 +7,6 @@
 using namespace pros;
 Controller master(E_CONTROLLER_MASTER);
 //-------------------------------Initializaiton---------------------------//
-// change port numbers before running
 pros::Motor intake(11); //bottom
 pros::Motor hood(-12); //top
 
@@ -16,15 +15,11 @@ adi::Pneumatics doinker(2,false);
 adi::Pneumatics pto(1,false);
 adi::Potentiometer pot(8);
 pros::Rotation rotation_sensor(21);
-//L1 raise L2 drop
-//engage pto and reverse intake
-
 bool mogo_clamp_extended = false;
 bool doinker_extended = false;
 bool pto_on = false;
 
 //----Motor Groups---//
-//change the port + motor gear
 pros::MotorGroup leftMotor({-1,3,-4},pros::MotorGears::blue);
 pros::MotorGroup rightMotor({6,7,-8},pros::MotorGears::blue);
 //--------------------------------Configuration----------------------------//
@@ -111,38 +106,6 @@ void toggle_doinker() {
     }
     doinker_extended = !doinker_extended;
 }
-
-
-
-// void toggle_arm(){
-//     if(arm_extended){
-//         arm.retract();
-//     }else{
-//         arm.extend();
-//     }
-//     arm_extended = !arm_extended;
-// }
-
-
-
-
-
-/**
- * A callback function for LLEMU's center button.
- *
- * When this callback is fired, it will toggle line 2 of the LCD text between
- * "I was pressed!" and nothing.
- */
-void on_center_button() {
-	static bool pressed = false;
-	pressed = !pressed;
-	if (pressed) {
-		pros::lcd::set_text(2, "I was pressed!");
-	} else {
-		pros::lcd::clear_line(2);
-	}
-}
-
 int armState = 1;// 3states, 0 = loading, 1 = Ali, 2, wall , 3 afk
 void armTask(){
     int target;
@@ -172,13 +135,7 @@ void armTask(){
         delay(20);
     }
 }
-/**
- * Runs initialization code. This occurs as soon as the program is started.
- *
- * All other competition modes are blocked by initialize; it is recommended
- * to keep execution time for this mode under a few seconds.
- */
-// initialize function. Runs on program startup
+
 void initialize() {
     pros::lcd::initialize(); // initialize brain screen
     chassis.calibrate(); // calibrate sensors
@@ -201,11 +158,7 @@ void initialize() {
     });
 }
 
-/**
- * Runs while the robot is in the disabled state of Field Management System or
- * the VEX Competition Switch, following either autonomous or opcontrol. When
- * the robot is enabled, this task will exit.
- */
+
 void disabled() {}
 
 void competition_initialize() {}
@@ -267,23 +220,8 @@ void autonomous() {
     //pto.extend();
     //run();
 	//blueRush();
-    
-    
-}
 
-/**
- * Runs the operator control code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the operator
- * control mode.
- *
- * If no competition control is connected, this function will run immediately
- * following initialize().
- *
- * If the robot is disabled or communications is lost, the
- * operator control task will be stopped. Re-enabling the robot will restart the
- * task, not resume it from where it left off.
- */
+}
 void opcontrol() {
 	bool driveSplitARc = true; 
 	bool tank = false;
