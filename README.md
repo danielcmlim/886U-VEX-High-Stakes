@@ -59,8 +59,8 @@ Pneumatics operate match mechanisms such as the mobile-goal clamp and doinker fo
 
 ## Technologies
 
-- C++
-- VEX V5
+- [C++](https://isocpp.org/)
+- [VEX V5](https://www.vexrobotics.com/v5)
 - [PROS](https://pros.cs.purdue.edu/)
 - [LemLib](https://lemlib.readthedocs.io/)
 - Odometry
