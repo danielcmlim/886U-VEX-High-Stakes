@@ -1,45 +1,75 @@
 # VEX High Stakes Robotics
 
-C++ code developed for a **VEX V5 competition robot** for the VEX High Stakes game, featuring autonomous routines and driver-controlled operation.
+C++ code for a VEX V5 competition robot built for the VEX High Stakes game. The project includes autonomous routines, driver control and mechanism control.
 
 ## Overview
 
-The project was designed to create a reliable competition robot that could perform consistently during autonomous and driver-controlled periods.
+This project was developed to create a reliable competition robot that performs consistently during both autonomous and driver-controlled periods.
+
+The code combines drivetrain control, odometry, PID tuning and mechanism control to support accurate movement and repeatable match actions.
+
+## Features
+
+- Autonomous movement using coordinate-based routines
+- Odometry using tracking wheels and an IMU
+- PID control for more accurate driving and turning
+- Driver control with tank and arcade drive options
+- Intake, hood and arm control
+- Pneumatic control for the mobile-goal clamp and doinker
+- State-based mechanism control for more predictable hood and arm operation
 
 ## Key Design Decisions
 
-- **Odometry:** Used tracking wheels and an IMU to accurately estimate the robot's position and heading.
-- **PID Control:** Used PID controllers to improve the accuracy and consistency of autonomous movement and turning.
-- **LemLib:** Used for chassis control and odometry to simplify autonomous movement and positioning.
-- **Motor Groups:** Grouped drivetrain motors to make movement control more consistent.
-- **State-Based Control:** Used different mechanism states to make hood and arm control more predictable.
-- **Pneumatics:** Used for mechanisms such as the mobile-goal clamp and doinker for quick actuation during matches.
+### Odometry
+
+Tracking wheels and an IMU estimate the robot's position and heading during autonomous routines.
+
+### PID Control
+
+PID controllers improve the accuracy and consistency of autonomous driving and turning.
+
+### LemLib
+
+[LemLib](https://lemlib.readthedocs.io/) provides chassis control and odometry tools that simplify autonomous movement and positioning.
+
+### Motor Groups
+
+Drivetrain motors are grouped to provide more consistent movement control.
+
+### State-Based Control
+
+Mechanisms use defined states to make hood and arm behaviour more predictable.
+
+### Pneumatics
+
+Pneumatics operate match mechanisms such as the mobile-goal clamp and doinker for fast actuation.
 
 ## Autonomous
 
 - Coordinate-based movement
 - Automated mechanism control
-- Odometry and PID-based positioning
+- Odometry-based positioning
+- PID-controlled driving and turning
 
 ## Driver Control
 
-- Tank and arcade-style driving
-- Intake and hood control
+- Tank drive and arcade drive options
+- Intake, hood and arm control
 - Pneumatic mechanism control
 
 ## Technologies
 
 - C++
 - VEX V5
-- PROS
-- LemLib
+- [PROS](https://pros.cs.purdue.edu/)
+- [LemLib](https://lemlib.readthedocs.io/)
 - Odometry
-- PID Control
+- PID control
 
 ## What I Learned
 
-- C++ robotics programming
-- Sensor and motor control
-- Autonomous programming
-- Odometry and PID tuning
-- Debugging and testing physical hardware
+- C++ programming for physical robotics systems
+- Sensor integration and motor control
+- Autonomous routine development
+- Odometry setup and PID tuning
+- Debugging and testing hardware in a competition environment
