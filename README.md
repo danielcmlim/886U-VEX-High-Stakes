@@ -18,31 +18,14 @@ The code combines drivetrain control, odometry, PID tuning and mechanism control
 - Pneumatic control for the mobile-goal clamp and doinker
 - State-based mechanism control for more predictable hood and arm operation
 
-## Key Design Decisions
+## Design Decisions
 
-### Odometry
-
-Tracking wheels and an IMU estimate the robot's position and heading during autonomous routines.
-
-### PID Control
-
-PID controllers improve the accuracy and consistency of autonomous driving and turning.
-
-### LemLib
-
-[LemLib](https://lemlib.readthedocs.io/) provides chassis control and odometry tools that simplify autonomous movement and positioning.
-
-### Motor Groups
-
-Drivetrain motors are grouped to provide more consistent movement control.
-
-### State-Based Control
-
-Mechanisms use defined states to make hood and arm behaviour more predictable.
-
-### Pneumatics
-
-Pneumatics operate match mechanisms such as the mobile-goal clamp and doinker for fast actuation.
+- **Odometry**: Used tracking wheels and an IMU to estimate the robot's position and heading during autonomous routines.
+- **PID control**: Used PID controllers to improve the accuracy and consistency of autonomous driving and turning.
+- **LemLib**: Used LemLib for chassis control and odometry tools to simplify autonomous movement and positioning.
+- **Motor groups**: Grouped drivetrain motors to provide more consistent movement and simplify motor control.
+- **State-based control**: Used defined states for mechanisms such as the hood and arm to make their behaviour more predictable.
+- **Pneumatics**: Used pneumatic mechanisms for the mobile-goal clamp and doinker to provide fast and reliable actuation during matches.
 
 ## Autonomous
 
@@ -68,8 +51,9 @@ Pneumatics operate match mechanisms such as the mobile-goal clamp and doinker fo
 
 ## What I Learned
 
-- C++ programming for physical robotics systems
-- Sensor integration and motor control
-- Autonomous routine development
-- Odometry setup and PID tuning
-- Debugging and testing hardware in a competition environment
+- Programming C++ for physical robotics systems
+- Integrating sensors with motor control
+- Developing autonomous routines for competition
+- Setting up odometry and tuning PID controllers
+- Designing state-based mechanism control
+- Debugging and testing software with physical hardware in a competition environment
