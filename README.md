@@ -1,6 +1,6 @@
 # VEX High Stakes Robotics
 
-C++ code for a VEX V5 competition robot built for the VEX High Stakes game. The project includes autonomous routines, driver control and mechanism control.
+C++ control software for a VEX V5 competition robot built for the VEX High Stakes game. The project includes autonomous routines, driver control and mechanism control.
 
 ## Overview
 
@@ -29,9 +29,9 @@ The code combines drivetrain control, odometry, PID tuning and mechanism control
 
 ## Autonomous
 
-- Coordinate-based movement
-- Automated mechanism control
-- Odometry-based positioning
+- Coordinate-based movement and positioning
+- Automated mechanism sequences
+- Odometry-assisted navigation
 - PID-controlled driving and turning
 
 ## Driver Control
@@ -43,9 +43,9 @@ The code combines drivetrain control, odometry, PID tuning and mechanism control
 ## Technologies
 
 - [C++](https://isocpp.org/)
-- [VEX V5](https://www.vexrobotics.com/v5)
 - [PROS](https://pros.cs.purdue.edu/)
 - [LemLib](https://lemlib.readthedocs.io/)
+- [VEX V5](https://www.vexrobotics.com/v5)
 - Odometry
 - PID control
 
